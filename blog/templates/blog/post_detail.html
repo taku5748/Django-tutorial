@@ -8,7 +8,7 @@
 <p>{{post.intro}}</p>
 <p>{{post.body}}</p>
 
-<hr />
+  <hr />
 
 
 <!-- コメントを表示 -->
@@ -20,14 +20,17 @@
         <div class="content">
             <p>
                 <strong>
-                    {{comment.name}}
-                    <small>{{comment.posted_date}}</small>
+                    {{comment.name}}<br>
                 </strong>
+                {{comment.body}}<br>
+                <small>{{comment.posted_date}}</small>
             </p>
         </div>
     </div>
 </article>
 <hr />
+{% empty %}
+<div class="notification"><p>コメントはまだありません。</p></div>
 {% endfor %}
 
 <h2 class="subtitle">コメントを追加する</h2>
